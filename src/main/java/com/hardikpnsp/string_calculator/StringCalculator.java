@@ -5,7 +5,16 @@ public class StringCalculator {
         if(numbers.isEmpty()){
             return 0;
         }else{
-            return Integer.parseInt(numbers);
+            String[] numTokens = numbers.split(",");
+            if(numTokens.length == 1){
+                return Integer.parseInt(numbers);
+            }else{
+                int answer = 0;
+                for (String num : numTokens){
+                    answer += Integer.parseInt(num);
+                }
+                return answer;
+            }
         }
     }
 }
