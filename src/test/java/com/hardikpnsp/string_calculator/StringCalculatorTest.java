@@ -8,5 +8,6 @@ public class StringCalculatorTest {
     @Test
     public void testAdd(){
         assertEquals(0, StringCalculator.add(""));
+        assertEquals(42, StringCalculator.add("42"));
     }
 }
