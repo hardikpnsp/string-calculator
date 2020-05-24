@@ -2,6 +2,10 @@ package com.hardikpnsp.string_calculator;
 
 public class StringCalculator {
     public static int add(String numbers){
-        return -1;
+        if(numbers.isEmpty()){
+            return 0;
+        }else{
+            return -1;
+        }
     }
 }
