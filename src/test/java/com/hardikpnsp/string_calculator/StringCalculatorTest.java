@@ -28,6 +28,7 @@ public class StringCalculatorTest {
             {"", 0, "Empty string should return 0"},
             {"42", 42, "Single digit string should return the digit itself"},
             {"1,1", 2, "String with ',' as delimiter should return sum of the digits seperated by ','"},
+            {"10,20,30,40,50", 150, "String with n comma seperated numbers should return sum of all numbers"}
         });
     }
 
