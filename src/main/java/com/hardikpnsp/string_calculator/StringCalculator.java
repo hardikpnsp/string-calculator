@@ -5,7 +5,7 @@ public class StringCalculator {
         if(numbers.isEmpty()){
             return 0;
         }else{
-            String[] numTokens = numbers.split(",");
+            String[] numTokens = numbers.split(",|\n");
             if(numTokens.length == 1){
                 return Integer.parseInt(numbers);
             }else{
