@@ -31,7 +31,8 @@ public class StringCalculatorTest {
             {"10,20,30,40,50", 150, "String with n comma seperated numbers should return sum of all numbers"},
             {"1\n2,3", 6, "String with delimiter '\\n' should be supported"},
             {"//;\n1;2", 3, "String with delimiter definition should seperate number with given delimiter"},
-            {"///\n1/2/3", 6, "String with delimiter definition should seperate number with given delimiter"}
+            {"///\n1/2/3", 6, "String with delimiter definition should seperate number with given delimiter"},
+            {"//;\n1;2,3\n4", 10, "String with delimiter definition should still support ',' and '\\n' as delimiters"}
         });
     }
 
