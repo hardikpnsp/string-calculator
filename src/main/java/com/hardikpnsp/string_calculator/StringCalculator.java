@@ -14,7 +14,12 @@ public class StringCalculator {
             }
             String[] numTokens = numbers.split(delimiterPattern);
             if(numTokens.length == 1){
-                return Integer.parseInt(numbers);
+                int n = Integer.parseInt(numbers);
+                if(n < 0){
+                    throw new NegativeNotAllowedException("negative number");
+                }else{
+                    return n;
+                }
             }else{
                 int answer = 0;
                 for (String num : numTokens){
