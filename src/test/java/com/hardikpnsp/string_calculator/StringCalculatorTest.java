@@ -38,6 +38,10 @@ public class StringCalculatorTest {
 
     @Test
     public void testAdd(){
-        assertEquals(testCaseExplaination, expectedOutput, StringCalculator.add(inputString));
+        try {
+			assertEquals(testCaseExplaination, expectedOutput, StringCalculator.add(inputString));
+		} catch (NegativeNotAllowedException e) {
+			e.printStackTrace();
+		}
     }
 }

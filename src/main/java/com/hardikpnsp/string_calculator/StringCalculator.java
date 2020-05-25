@@ -1,7 +1,7 @@
 package com.hardikpnsp.string_calculator;
 
 public class StringCalculator {
-    public static int add(String numbers){
+    public static int add(String numbers) throws NegativeNotAllowedException{
         if(numbers.isEmpty()){
             return 0;
         }else{
