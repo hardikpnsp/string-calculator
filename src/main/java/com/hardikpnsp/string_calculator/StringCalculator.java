@@ -18,7 +18,7 @@ public class StringCalculator {
             if(numTokens.length == 1){
                 int n = Integer.parseInt(numbers);
                 if(n < 0){
-                    throw new NegativeNotAllowedException("negative number");
+                    throw new NegativeNotAllowedException("Negative numbers encountered in input: " + "[" + numbers + "]");
                 }else{
                     return n;
                 }
@@ -36,7 +36,7 @@ public class StringCalculator {
                 if(negativeNumbers.isEmpty()){
                     return answer;
                 }else{
-                    throw new NegativeNotAllowedException("negative numbers");
+                    throw new NegativeNotAllowedException("Negative numbers encountered in input: " + negativeNumbers.toString());
                 }
             }
         }
