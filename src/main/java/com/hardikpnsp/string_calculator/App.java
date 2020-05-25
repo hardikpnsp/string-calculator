@@ -3,7 +3,7 @@ package com.hardikpnsp.string_calculator;
 import java.util.Scanner;
 
 /**
- * Hello world!
+ * A Simple CLI for StringCalculator
  *
  */
 public class App 
