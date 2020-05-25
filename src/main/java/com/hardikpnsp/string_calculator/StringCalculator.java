@@ -1,6 +1,8 @@
 package com.hardikpnsp.string_calculator;
 
 import java.util.Vector;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class StringCalculator {
     public static int add(String numbers) throws NegativeNotAllowedException{
@@ -11,12 +13,21 @@ public class StringCalculator {
             String exceptionMessage = "Negative numbers encountered in input: ";
             Vector<Integer> negativeNumbers = new Vector<Integer>();
             int answer = 0;
-
+            
             if(numbers.startsWith("//")){
                 String[] temp = numbers.split("\n", 2);
                 String extra_delimiter = temp[0].substring(2);
                 numbers = temp[1];
-                delimiterPattern += "|" + extra_delimiter;
+
+                if (extra_delimiter.startsWith("[")){
+                    Pattern p = Pattern.compile("\\[(.*?)\\]");
+                    Matcher m = p.matcher(extra_delimiter);
+                    while(m.find()){
+                        delimiterPattern += "|\\Q" + m.group(1) + "\\E";
+                    }
+                }else{
+                    delimiterPattern += "|" + extra_delimiter;
+                }
             }
 
             String[] numTokens = numbers.split(delimiterPattern);
