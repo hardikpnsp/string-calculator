@@ -20,6 +20,8 @@ public class StringCalculatorExeptionTest {
     public static List<Object[]> testCases(){
         return Arrays.asList(new Object[][]{
             {"-1"},
+            {"1,-1"},
+            {"2,3,-4,5"}
         });
     }
     @Test(expected = NegativeNotAllowedException.class)
