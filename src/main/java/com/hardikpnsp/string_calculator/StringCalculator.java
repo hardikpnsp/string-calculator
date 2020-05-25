@@ -5,6 +5,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringCalculator {
+    /**
+     * 
+     * @param numbers [//[delimiter1][delimiter2][...]...\n] delimiter seperated non negative numbers
+     * @return addition of all numbers in the string
+     * @throws NegativeNotAllowedException
+     */
     public static int add(String numbers) throws NegativeNotAllowedException{
         if(numbers.isEmpty()){
             return 0;
@@ -18,11 +24,14 @@ public class StringCalculator {
                 String[] temp = numbers.split("\n", 2);
                 String extra_delimiter = temp[0].substring(2);
                 numbers = temp[1];
-
+                
+                //if string does not end with ']' then initial '[' is considered a delimiter
                 if (extra_delimiter.startsWith("[") && extra_delimiter.endsWith("]")){
                     Pattern p = Pattern.compile("\\[(.*?)\\]");
                     Matcher m = p.matcher(extra_delimiter);
                     while(m.find()){
+
+                        // \Q and \E for escaping metacharacters in regex matching
                         delimiterPattern += "|\\Q" + m.group(1) + "\\E";
                     }
                 }else{
