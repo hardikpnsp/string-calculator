@@ -1,18 +1,18 @@
 # string-calculator
 A coding Kata for Test Driven Development in java [from here](https://osherove.com/tdd-kata-1)
 
-# Build and run process
+## Build and run process
 1. make sure maven is set up on machine
 2. clone the repository
 3. `cd string-calculator`
 
-## Testing
+### Testing
 `mvn test`
 
-## Run CLI
+### Run CLI
 `mvn exec:java`
 
-# Usage
+## Usage
 command line string caclulator performs Addition operation on a string.
 - It supports simple addition of numbers seperated with delimiters `[',' or '\n']` by default
 - for custom delimiters the input string can be prefixed with `//[delimiter1][delimiter2][...]...\n` syntax
@@ -30,7 +30,15 @@ Enter String Sequence to calculate Addition:
 Answer: 60
 ```
 
-## Note:
+### Note:
 - as instructed in the [kata](https://osherove.com/tdd-kata-1)
 > StringCalculator ignores numbers > 1000  
 > StringCalculator throws exception for negative numbers  
+
+## Commit messages
+
+    ENH: Enhancement, new functionality
+    BUG: Bug fix
+    DOC: Additions/updates to documentation
+    TST: Additions/updates to tests
+    CLN: Code cleanup
