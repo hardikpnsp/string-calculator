@@ -35,7 +35,8 @@ public class StringCalculatorTest {
             {"//;\n1;2,3\n4", 10, "String with delimiter definition should still support ',' and '\\n' as delimiters"},
             {"2,1002", 2, "Numbers bigger than 1000 should be ignored"},
             {"10,20,1020", 30, "All numbers bigger than 1000 should be ignored"},
-            {"//;\n1000;1000;1001", 2000, "Number bigger than 1000 should be ignored, 1000 should be counted"}
+            {"//;\n1000;1000;1001", 2000, "Number bigger than 1000 should be ignored, 1000 should be counted"},
+            {"//[***]\n1***2***3", 6, "Multi character delimiter should be supported with [] syntax"}
         });
     }
 
