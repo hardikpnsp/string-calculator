@@ -14,6 +14,7 @@ public class StringCalculatorExeptionTest {
     
     private String inputString;
     private String exceptionMessage;
+    private static String exceptionMessageStartingPattern = "Negative numbers encountered in input: ";
 
     public StringCalculatorExeptionTest(String inputString, String exceptionMessage){
         this.inputString = inputString;
@@ -23,10 +24,10 @@ public class StringCalculatorExeptionTest {
     @Parameterized.Parameters
     public static List<Object[]> testCases(){
         return Arrays.asList(new Object[][]{
-            {"-1", "Negative numbers encountered in input: [-1]"},
-            {"1,-1", "Negative numbers encountered in input: [-1]"},
-            {"2,3,-4,5", "Negative numbers encountered in input: [-4]"},
-            {"-1,-2,-3,-4", "Negative numbers encountered in input: [-1, -2, -3, -4]"}
+            {"-1", exceptionMessageStartingPattern + "[-1]"},
+            {"1,-1", exceptionMessageStartingPattern + "[-1]"},
+            {"2,3,-4,5", exceptionMessageStartingPattern + "[-4]"},
+            {"-1,-2,-3,-4", exceptionMessageStartingPattern + "[-1, -2, -3, -4]"},
         });
     }
     @Test(expected = NegativeNotAllowedException.class)
