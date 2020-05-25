@@ -19,14 +19,14 @@ public class StringCalculator {
                 String extra_delimiter = temp[0].substring(2);
                 numbers = temp[1];
 
-                if (extra_delimiter.startsWith("[")){
+                if (extra_delimiter.startsWith("[") && extra_delimiter.endsWith("]")){
                     Pattern p = Pattern.compile("\\[(.*?)\\]");
                     Matcher m = p.matcher(extra_delimiter);
                     while(m.find()){
                         delimiterPattern += "|\\Q" + m.group(1) + "\\E";
                     }
                 }else{
-                    delimiterPattern += "|" + extra_delimiter;
+                    delimiterPattern += "|\\Q" + extra_delimiter + "\\E";
                 }
             }
 
