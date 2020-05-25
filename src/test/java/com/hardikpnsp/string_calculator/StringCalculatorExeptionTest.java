@@ -28,6 +28,7 @@ public class StringCalculatorExeptionTest {
             {"1,-1", exceptionMessageStartingPattern + "[-1]"},
             {"2,3,-4,5", exceptionMessageStartingPattern + "[-4]"},
             {"-1,-2,-3,-4", exceptionMessageStartingPattern + "[-1, -2, -3, -4]"},
+            {"//;\n-1;-2\n-3,-4", exceptionMessageStartingPattern + "[-1, -2, -3, -4]"},
         });
     }
     @Test(expected = NegativeNotAllowedException.class)
