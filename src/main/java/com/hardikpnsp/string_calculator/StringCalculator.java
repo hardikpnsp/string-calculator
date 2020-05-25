@@ -1,5 +1,7 @@
 package com.hardikpnsp.string_calculator;
 
+import java.util.Vector;
+
 public class StringCalculator {
     public static int add(String numbers) throws NegativeNotAllowedException{
         if(numbers.isEmpty()){
@@ -22,10 +24,20 @@ public class StringCalculator {
                 }
             }else{
                 int answer = 0;
+                Vector<Integer> negativeNumbers = new Vector<Integer>();
                 for (String num : numTokens){
-                    answer += Integer.parseInt(num);
+                    int n = Integer.parseInt(num);
+                    if(n < 0){
+                        negativeNumbers.add(n);
+                    }else{
+                        answer += n;
+                    }
                 }
-                return answer;
+                if(negativeNumbers.isEmpty()){
+                    return answer;
+                }else{
+                    throw new NegativeNotAllowedException("negative numbers");
+                }
             }
         }
     }
