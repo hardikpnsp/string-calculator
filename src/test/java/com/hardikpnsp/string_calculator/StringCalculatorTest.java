@@ -38,7 +38,9 @@ public class StringCalculatorTest {
             {"//;\n1000;1000;1001", 2000, "Number bigger than 1000 should be ignored, 1000 should be counted"},
             {"//[***]\n1***2***3", 6, "Multi character delimiter should be supported with [] syntax"},
             {"//*\n1*2*3", 6, "Regex metacharacters should be supported as delimiter"},
-            {"//[\n1[2[3", 6, "If string does not end with ']' then '[' should be considered a delimiter"}
+            {"//[\n1[2[3", 6, "If string does not end with ']' then '[' should be considered a delimiter"},
+            {"//[*][%]\n1*2%3", 6, "Multiple delimiter should be supported with multiple [] syntax"},
+            {"//[**][;;][%%]\n1**2;;3%%4", 10, "Multiple multi character delimiter should be supported with [] syntax"}
         });
     }
 
